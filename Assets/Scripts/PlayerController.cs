@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public float horizontalSpeed;    
     private float speed;
 
-    Shoot shoot;
+    public GameObject shoot;
+    private bool isShoot = false;
 
     [Header("Camera")]
     public Camera cam;
@@ -19,14 +20,15 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         ScaleCamera();
-        shoot = GetComponent<Shoot>();
     }
 
     private void FixedUpdate()
     {
+        isShoot = false;
         transform.Translate(speed, 0, 0);
 
         MoveToScreenBorder();
+        isShootBool();
     }
 
     private void ScaleCamera()
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour
         centrCam = cam.transform.position; // Получаем центр камеры, т.к. пивот в центре камеры.
 
         minX = centrCam.x - widthCam; // Левый край камеры.
-        maxX = centrCam.x + widthCam; // Правый край камеры.
+        maxX -= minX; // Правый край камеры.
     }
 
     public void LeftButtonMove()
@@ -65,11 +67,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ShootButton()
+    public void ShootButton()
     {
-        if(!GameObject.FindWithTag("Shoot"))
+        if(isShoot)
         {
-            Instantiate(shoot);
+            Vector3 position = transform.position;
+            position.y += 0.3f;
+            GameObject bullet = Instantiate(shoot, position, Quaternion.identity);
+        }
+    }
+
+    private void isShootBool()
+    {
+        if (!GameObject.FindWithTag("Bullet"))
+        {
+            isShoot = true;
         }
     }
 }
