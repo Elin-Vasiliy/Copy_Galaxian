@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player")]
     public float horizontalSpeed;    
-    private float speed;
+    private float speed; // Скорость перемещения корабля.
 
-    public GameObject shoot;
+    public GameObject shoot; // Пуля.
     private bool isShoot = false;
 
     [Header("Camera")]
