@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    private float speed = 7f; // Скорость пули.
+    private float speed = 5f; // Скорость пули.
 
     private void Start()
     {
@@ -24,5 +24,13 @@ public class Shoot : MonoBehaviour
     void MoveBullet() // Движение пули.
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }

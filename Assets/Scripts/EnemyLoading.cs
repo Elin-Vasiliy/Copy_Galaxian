@@ -9,8 +9,8 @@ public class EnemyLoading : MonoBehaviour
     MoveBackground moveBackground;
 
     private int[] pole;
-    private int height = 10;
-    private int width = 4;
+    private int height = 4; // Количество врагов в высоту.
+    private int width = 10; // Количество врагов в ширину.
 
     private void Start()
     {
@@ -21,18 +21,20 @@ public class EnemyLoading : MonoBehaviour
 
     private void LoadingEnemies()
     {
-        for (int i = 0; i < height; i++)
+        for (int i = 0; i < width; i++)
         {
-            for (int j = 0; j < width; j++)
+            for (int j = 0; j < height; j++)
             {
-                Vector2 temp = new Vector2((moveBackground.centrCam.x - (moveBackground.WidthCamera / 2) + i * SizeBoxEnemies(moveBackground.WidthCamera)) + 1.0f, j + 1);
-                GameObject newEnemy = Instantiate(Enemy, temp, Quaternion.identity);
+
+                float ofset = moveBackground.centrCam.x - (moveBackground.WidthCamera / 2) + SizeBoxEnemies(moveBackground.WidthCamera); // Сдвиг от края относительно числа врагов в начале уровня.
+                Vector2 temp = new Vector2(ofset + i * SizeBoxEnemies(moveBackground.WidthCamera), j + 1); // Точка координат врага с учетом сдвига и числа врагов.
+                GameObject newEnemy = Instantiate(Enemy, temp, Quaternion.identity); // Создаем экземпляр врагов.
             }
         }
     }
 
-    private float SizeBoxEnemies(float width)
+    private float SizeBoxEnemies(float widthScreen) // Передаем ширину экрана и вычисляем шаг промежутка между врагами.
     {
-        return width / 10;
+        return widthScreen / (width + 1.0f);
     }
 }

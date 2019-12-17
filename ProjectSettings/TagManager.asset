@@ -7,6 +7,7 @@ TagManager:
   - LeftButtonMove
   - Bullet
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
