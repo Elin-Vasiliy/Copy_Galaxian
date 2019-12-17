@@ -7,7 +7,7 @@ public class Shoot : MonoBehaviour
     private float speed = 5f; // Скорость пули.
 
     private void Start()
-    {
+    {   
         BulletDestroy();
     }
 
@@ -18,6 +18,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
+        
         MoveBullet();
     }
 

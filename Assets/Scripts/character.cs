@@ -5,12 +5,10 @@ using UnityEngine;
 public class character : MonoBehaviour
 {
     public int Hp = 1;
-    public bool isOk;
 
     private void Update()
     {
         DestroyGameObject();
-        isOk = false;
     }
 
     private void DestroyGameObject()
@@ -28,14 +26,4 @@ public class character : MonoBehaviour
             Hp -= 1;
         }
     }
-
-    //public virtual void OnTriggerEnter2D(Collider2D collider)
-    //{
-    //    if (collider == GameObject.FindWithTag("Bullet"))
-    //    {
-    //        Hp -= 1;
-    //    }
-    //    isOk = true;
-    //}
-
 }

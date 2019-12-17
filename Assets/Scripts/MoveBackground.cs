@@ -33,7 +33,6 @@ public class MoveBackground : MonoBehaviour
 
         widthCam = cam.orthographicSize * cam.aspect; // Получили половину ширины камеры.
         centrCam = cam.transform.position; // Получаем центр камеры, т.к. пивот в центре камеры.
-        print(widthCam);
         minX = centrCam.x - widthCam; // Левый край камеры.
         maxX -= minX; // Правый край камеры.
 
