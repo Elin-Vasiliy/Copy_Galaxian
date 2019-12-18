@@ -7,6 +7,12 @@ public abstract class CharacterScript : MonoBehaviour
     [SerializeField] protected float Hp = 1f;
     [SerializeField] protected float SpeedMove = 1f;
     [SerializeField] protected float Points = 1f;
+    ScoreScript scoreScript;
+
+    private void Awake()
+    {
+        scoreScript = FindObjectOfType<ScoreScript>();
+    }
 
     protected virtual void Update()
     {
@@ -17,7 +23,8 @@ public abstract class CharacterScript : MonoBehaviour
     {
         if (Hp == 0)
         {
-             gameObject.SetActive(false);
+            scoreScript.Score += Points;
+            gameObject.SetActive(false);            
         }
     }
 

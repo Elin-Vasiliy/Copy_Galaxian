@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player")]
     public float horizontalSpeed;    
-    private float speed = 0.5f; // Скорость перемещения корабля.
+    private float speed; // Скорость перемещения корабля.
 
     [Header("Plane")]
     public GameObject Plane;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public void RunMove()
     {
-        transform.Translate(speed, 0, 0);
+        transform.Translate(speed * Time.deltaTime, 0, 0);
 
         MoveToScreenBorder();
     }

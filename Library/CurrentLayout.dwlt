@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 683
     width: 1023
     height: 274
-  m_MinSize: {x: 102, y: 124}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 14}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 572}
   m_MaxSize: {x: 4002, y: 12072}
   vertical: 1
-  controlID: 108
+  controlID: 65
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,8 +122,8 @@ MonoBehaviour:
     y: 0
     width: 380
     height: 957
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -151,10 +151,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 683, y: 572}
-  m_MaxSize: {x: 12008, y: 12072}
+  m_MinSize: {x: 679, y: 572}
+  m_MaxSize: {x: 12004, y: 12072}
   vertical: 0
-  controlID: 107
+  controlID: 122
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1094
+  m_LastSelectedObjectID: 10516
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -368,19 +368,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabf
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabf
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Project_Unity\Copy_Galaxian
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 7}
-    m_SelectedIDs: c2280000
-    m_LastClickedID: 10434
+    m_SelectedIDs: 74260000
+    m_LastClickedID: 9844
     m_ExpandedIDs: 00000000442600004e26000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -434,9 +434,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: aafbffff
+    m_LastClickedInstanceID: -1110
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -528,9 +528,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: bafbffff
-      m_LastClickedID: -1094
-      m_ExpandedIDs: 9afbffffaefbffffcefbffffdefbffff24290000
+      m_SelectedIDs: 0a9dffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: defbffff2429000042290000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

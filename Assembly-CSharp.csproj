@@ -66,11 +66,14 @@
     <Compile Include="Assets\Scripts\CharacterScript.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EnemyLoading.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts_01.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\MoveBackground.cs" />
     <Compile Include="Assets\Scripts\PlaeyrShooting.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\ScoreScript.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Project_Unity/Copy_Galaxian/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
