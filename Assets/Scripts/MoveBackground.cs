@@ -13,7 +13,7 @@ public class MoveBackground : MonoBehaviour
     public float WidthCamera;
     public Vector2 centrCam; // Центр камеры.
     private float widthCam; // Половина ширины камеры.
-    private float minX, maxX, minZ, maxZ;    
+    public float minX, maxX;    
     private float sizePlaneX = 10; // Кф для растяжения по длинне Plane.
 
     private void Awake()
@@ -28,7 +28,7 @@ public class MoveBackground : MonoBehaviour
         animator.speed = speed;
     }
 
-    private void ScaleBackground()
+    public float ScaleBackground()
     {
 
         widthCam = cam.orthographicSize * cam.aspect; // Получили половину ширины камеры.
@@ -37,5 +37,7 @@ public class MoveBackground : MonoBehaviour
         maxX -= minX; // Правый край камеры.
 
         transform.localScale = new Vector3((maxX - minX) / sizePlaneX, transform.localScale.y, transform.localScale.z); // Расчет размера камерыдля верстки фона.
+
+        return minX;
     }
 }

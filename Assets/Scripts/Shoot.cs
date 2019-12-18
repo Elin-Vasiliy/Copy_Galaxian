@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
 
     private void BulletDestroy() // Уничтожение пули
     {
-        Destroy(gameObject, 1.4f); 
+        Destroy(gameObject, 1.5f); 
     }
 
     private void Update()

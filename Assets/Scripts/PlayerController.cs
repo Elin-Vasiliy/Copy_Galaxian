@@ -6,38 +6,22 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player")]
     public float horizontalSpeed;    
-    private float speed; // Скорость перемещения корабля.
+    private float speed = 0.5f; // Скорость перемещения корабля.
 
-    public GameObject shoot; // Пуля.
-    private bool isShoot = false;
-
-    [Header("Camera")]
-    public Camera cam;
-    private float minX, maxX;
-    private Vector2 centrCam; // Центр камеры.
-    private float widthCam; // Ширина камеры.
+    [Header("Plane")]
+    public GameObject Plane;
+    MoveBackground moveBackground;
 
     private void Start()
     {
-        ScaleCamera();
+        moveBackground = Plane.GetComponent<MoveBackground>();
     }
 
-    private void FixedUpdate()
+    public void RunMove()
     {
-        isShoot = false;
         transform.Translate(speed, 0, 0);
 
         MoveToScreenBorder();
-        isShootBool();
-    }
-
-    private void ScaleCamera()
-    {
-        widthCam = cam.orthographicSize * cam.aspect; // Получили половину ширины камеры.
-        centrCam = cam.transform.position; // Получаем центр камеры, т.к. пивот в центре камеры.
-
-        minX = centrCam.x - widthCam; // Левый край камеры.
-        maxX -= minX; // Правый край камеры.
     }
 
     public void LeftButtonMove()
@@ -57,31 +41,13 @@ public class PlayerController : MonoBehaviour
 
     private void MoveToScreenBorder()
     {
-        if(transform.position.x < minX)
+        if(transform.position.x < moveBackground.minX)
         {
-            transform.position = new Vector2(maxX, transform.position.y);
+            transform.position = new Vector2(moveBackground.maxX, transform.position.y);
         }
-        else if(transform.position.x > maxX)
+        else if(transform.position.x > moveBackground.maxX)
         {
-            transform.position = new Vector2(minX, transform.position.y);
-        }
-    }
-
-    public void ShootButton()
-    {
-        if(isShoot)
-        {
-            Vector3 position = transform.position;
-            position.y += 0.3f;
-            GameObject bullet = Instantiate(shoot, position, Quaternion.identity);
-        }
-    }
-
-    private void isShootBool()
-    {
-        if (!GameObject.FindWithTag("Bullet"))
-        {
-            isShoot = true;
+            transform.position = new Vector2(moveBackground.minX, transform.position.y);
         }
     }
 }
